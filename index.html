@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Parking Request</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="./Images/mci_english_horizontal_col.jpg" alt="Logo" class="logo">
+    </div>
+
+    <div class="imagecontainer">
+        <div class="image">
+            <img src="Images/car.png", alt="car image" class="car image">
+        </div>
+        <div class="text">
+            <p>Season Parking Request</p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h1></h1>
+        <p1> Thank you for your interest in the season parking at MCI. Please provide us the details below.</p1>
+
+        <form id="parkingForm">
+            <ol>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </li>
+
+                <li>
+                    <label>Employment Type:</label>
+                    <p2>Depending on your employee type, deduction of the fee of $181.90 will differ. For MCI-HQ officers, the fee will be deducted from your monthly payroll. For secondees, fees to be made via bank transfer to MCI.</p2>
+                    <div class="button-container">
+                        <label>
+                            <input type="radio" name="employmentType" value="MCI-HQ" required> MCI-HQ employee
+                        </label>
+                        <label>
+                            <input type="radio" name="employmentType" value="Secondees" required> Secondees
+                        </label>
+                    </div>
+                </li>
+
+                <li>
+                    <label for="carparkNumber">Carpark Number:</label>
+                    <input type="text" id="carparkNumber" name="carparkNumber" required>
+                </li>
+
+                <li>
+                    <label for="uiNumber">UI Number:</label>
+                    <p2>Your car IU number is a 10-digit number located on a sticker on your in-vehicle unit and can also be found in your vehicle's log card.</p2>
+                    <input type="text" id="uiNumber" name="uiNumber" pattern="[0-9]{1,10}" required>
+                </li>
+
+                <li>
+                    <label for="startDate">Preferred Start Date (DD/MM/YYYY):</label>
+                    <p2>Your preferred start date for the season parking to commence.</p2>
+                    <input type="text" id="startDate" name="startDate" pattern="\d{1,2}/\d{1,2}/\d{4}" required>
+                </li>
+            </ol>
+
+            <br></br>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        <p id="confirmationMessage" Thank you for your request. Our team will contact you within 3 working days.></p>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Get form inputs
+            var name = document.getElementById("name").value;
+            var employmentType = document.querySelector('input[name="employmentType"]:checked');
+            var carparkNumber = document.getElementById("carparkNumber").value;
+            var uiNumber = document.getElementById("uiNumber").value;
+            var startDate = document.getElementById("startDate").value;
+
+            // Validate inputs
+            if (name === "" || employmentType === null || carparkNumber === "" || uiNumber === "" || startDate === "") {
+                alert("Please provide all the required information.");
+                return;
+            }
+
+            // Validate employment type selection
+            var mciHQEmployee = employmentType.value === "MCI-HQ";
+            var secondees = employmentType.value === "Secondees";
+
+            if (!mciHQEmployee && !secondees) {
+                alert("Please select your employment type.");
+                return;
+            }
+
+            // Display confirmation message
+            var confirmationMessage = document.getElementById("confirmationMessage");
+            confirmationMessage.innerHTML = "Thank you for your request. Our team will contact you within 3 working days.";
+            
+        }
+
+    </script>
+
+</body>
+</html>
