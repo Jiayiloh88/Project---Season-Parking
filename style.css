@@ -1,0 +1,89 @@
+body {
+    font-family: gt_eesti_displaybold,Avenir,Helvetica,Arial,"sans-serif";
+    background-color: #ffffff; /* white background color */
+    height: 100vh;
+}
+
+.logo {
+    background-color:#ffffff; /* white background color */
+    max-width: 40%; /* Make sure the logo doesn't exceed the container width */
+    display: flex;
+    align-items: left;
+}
+
+.imagecontainer {
+    background-color: #edab05;/* orange background color */
+    display: fex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px
+}
+
+.image {
+    background-color:#edab05;/* orange background color */
+    width: 65% ; /* Make sure the logo doesn't exceed the container width */   
+}
+
+.text {
+    font-size: xx-large ;
+    font-weight: bold;
+    color:#ffffff;
+    text-align:center;
+    width: 70%
+}
+
+.container {
+    background-color: #ffffff; /* White background color */
+    border: 1px solid #ddd; /* Border around the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    text-align: left;
+    width: 90%; /* Adjust the width as needed */
+
+}
+
+h1, p1 {
+    color:#edab05; 
+    text-align: center; /* Center H1 and P elements */
+}
+
+p2 {
+    color: grey;
+}
+
+ol {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px; /* Add space between list items */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #fbb401; /* orange color */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #edab05; /* Darker shade on hover */
+}
