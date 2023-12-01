@@ -61,13 +61,13 @@
                 <li>
                     <label for="uiNumber">UI Number:</label>
                     <p2>Your car IU number is a 10-digit number located on a sticker on your in-vehicle unit and can also be found in your vehicle's log card.</p2>
-                    <input type="text" id="uiNumber" name="uiNumber" pattern="[0-9]{1,10}" required>
+                    <input type="text" id="uiNumber" name="uiNumber" pattern="[0-9]{1,10}" title="Please enter numerical digits (maximum 10)" required>
                 </li>
 
                 <li>
-                    <label for="startDate">Preferred Start Date (DD/MM/YYYY):</label>
+                    <label for="startDate">Preferred Start Date:</label>
                     <p2>Your preferred start date for the season parking to commence.</p2>
-                    <input type="text" id="startDate" name="startDate" pattern="\d{1,2}/\d{1,2}/\d{4}" required>
+                    <input type="date" id="startDate" name="startDate" min="<?php echo date('Y-m-d'); ?>" required>
                 </li>
             </ol>
 
@@ -110,6 +110,11 @@
                 return;
             }
 
+             // Validate UI number
+             if (!/^\d+$/.test(uiNumber)) {
+                alert("UI number must contain only numerical digits.");
+                return;
+            }
             // Validate employment type selection
             var mciHQEmployee = employmentType.value === "MCI-HQ";
             var secondees = employmentType.value === "Secondees";
@@ -119,6 +124,14 @@
                 return;
             }
         
+            // Validate preferred start date
+            var today = new Date();
+            var selectedDate = new Date(startDate);
+
+            if (selectedDate <= today) {
+                alert("Preferred start date must be a future date.");
+                return;
+            }
             // Show the popup after a delay (you can adjust the delay as needed)
             setTimeout(showPopup, 1000);
 
