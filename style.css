@@ -12,7 +12,6 @@ body {
 }
 
 .imagecontainer {
-    background-color: #edab05;/* orange background color */
     display: fex;
     align-items: center;
     justify-content: space-between;
@@ -20,8 +19,7 @@ body {
 }
 
 .image {
-    background-color:#edab05;/* orange background color */
-    width: 65% ; /* Make sure the logo doesn't exceed the container width */   
+    max-width:100% ; /* Make sure the logo doesn't exceed the container width */   
 }
 
 .text {
@@ -43,7 +41,6 @@ body {
 }
 
 h1, p1 {
-    color:#edab05; 
     text-align: center; /* Center H1 and P elements */
 }
 
@@ -75,7 +72,7 @@ input {
 }
 
 button {
-    background-color: #fbb401; /* orange color */
+    background-color: #4d99e4; /* orange color */
     color: #ffffff; /* White text color */
     padding: 10px 20px;
     border: none;
@@ -85,5 +82,5 @@ button {
 }
 
 button:hover {
-    background-color: #edab05; /* Darker shade on hover */
+    background-color: #4373ee; /* Darker shade on hover */
 }
