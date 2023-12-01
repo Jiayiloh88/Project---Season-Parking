@@ -75,11 +75,28 @@
 
             <button type="button" onclick="submitForm()">Submit</button>
         </form>
-        <p id="confirmationMessage" Thank you for your request. Our team will contact you within 3 working days.></p>
+
+        <div id="popup">
+            <p>Thank you for your request. Our team will contact you within 3 working days.</p>
+          </div>
+          
+          <div id="overlay"></div>
     </div>
 
-    <script>
-        function submitForm() {
+    <script>  
+        function showPopup() {
+            // Display confirmation message
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            }
+
+            // Function to hide the popup
+            function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            }
+
+            function submitForm() {
             // Get form inputs
             var name = document.getElementById("name").value;
             var employmentType = document.querySelector('input[name="employmentType"]:checked');
@@ -101,13 +118,13 @@
                 alert("Please select your employment type.");
                 return;
             }
+        
+            // Show the popup after a delay (you can adjust the delay as needed)
+            setTimeout(showPopup, 1000);
 
-            // Display confirmation message
-            var confirmationMessage = document.getElementById("confirmationMessage");
-            confirmationMessage.innerHTML = "Thank you for your request. Our team will contact you within 3 working days.";
-            
+            // Hide the popup when clicking outside of it
+            document.getElementById('overlay').addEventListener('click', hidePopup);
         }
-
     </script>
 
 </body>
