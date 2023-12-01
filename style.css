@@ -19,15 +19,7 @@ body {
 }
 
 .image {
-    max-width:100% ; /* Make sure the logo doesn't exceed the container width */   
-}
-
-.text {
-    font-size: xx-large ;
-    font-weight: bold;
-    color:#ffffff;
-    text-align:center;
-    width: 70%
+    max-width:100% ;
 }
 
 .container {
@@ -72,7 +64,7 @@ input {
 }
 
 button {
-    background-color: #4d99e4; /* orange color */
+    background-color: #4d99e4; /* blue color */
     color: #ffffff; /* White text color */
     padding: 10px 20px;
     border: none;
@@ -83,4 +75,28 @@ button {
 
 button:hover {
     background-color: #4373ee; /* Darker shade on hover */
+}
+
+#popup {
+      display: none;
+      background-color: #ffffff;
+      border: 4px solid #ccc;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+    }
+
+#overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
 }
